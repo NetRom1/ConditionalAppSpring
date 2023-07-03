@@ -12,7 +12,9 @@ public class JavaConfig {
 
     @Bean
     @ConditionalOnProperty(value = "netology.profile.dev",
-            havingValue = "true")
+            havingValue = "true",
+            matchIfMissing = true
+    )
     public SystemProfile devProfile() {
         return new DevProfile();
     }
